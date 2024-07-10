@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  background-color: hsl(60, 2%, 76%);
+  font-size: 20px;
+  color: white;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  height: 70px;
+}
+
+.brand-Name {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(22, 20, 20);
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.navbar-inner {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+#link-text {
+  color: white;
+  text-decoration: none;
+}
+
+.s3 {
+  height: 20px;
+  width: 250px;
+}
