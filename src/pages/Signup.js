@@ -13,7 +13,7 @@ function Signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const inputObj = { username, email, password, address, phno };
-    const url = "http://localhost:4000/users/createuser";
+    const url = "https://vit-crud-backendd.onrender.com/users/createuser";
     axios
       .post(url, inputObj)
       .then((res) => {

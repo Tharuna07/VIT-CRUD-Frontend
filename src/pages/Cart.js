@@ -19,7 +19,7 @@ const Cart = () => {
 
     try {
       const response = await axios.get(
-        "http://localhost:4000/products/cartItems"
+        "https://vit-crud-backendd.onrender.com/products/cartItems"
       );
       setCartItems(response.data);
     } catch (error) {
@@ -32,7 +32,9 @@ const Cart = () => {
 
   const handleDelete = async (itemId) => {
     axios
-      .delete(`http://localhost:4000/products/cartItems/${itemId}`)
+      .delete(
+        `https://vit-crud-backendd.onrender.com/products/cartItems/${itemId}`
+      )
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {
