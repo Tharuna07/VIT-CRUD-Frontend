@@ -19,7 +19,7 @@ const Cart = () => {
 
     try {
       const response = await axios.get(
-        "https://vit-crud-backendd.onrender.com/products/cartItems"
+        "https://vit-crud-backendd-1.onrender.com/products/cartItems"
       );
       setCartItems(response.data);
     } catch (error) {
@@ -33,7 +33,7 @@ const Cart = () => {
   const handleDelete = async (itemId) => {
     axios
       .delete(
-        `https://vit-crud-backendd.onrender.com/products/cartItems/${itemId}`
+        `https://vit-crud-backendd-1.onrender.com/products/cartItems/${itemId}`
       )
       .then((res) => {
         console.log(res.data);

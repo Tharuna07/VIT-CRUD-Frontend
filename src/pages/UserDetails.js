@@ -5,7 +5,7 @@ function UserDetails() {
   const [users, setUsers] = React.useState([]);
   useEffect(() => {
     axios
-      .get("https://vit-crud-backendd.onrender.com/users/getusers")
+      .get("https://vit-crud-backendd-1.onrender.com/users/getusers")
       .then((res) => {
         console.log(res.data);
         setUsers(res.data);
@@ -16,7 +16,7 @@ function UserDetails() {
   }, []);
   const deleteData = (id) => {
     axios
-      .delete(`https://vit-crud-backendd.onrender.com/users/deleteuser/${id}`)
+      .delete(`https://vit-crud-backendd-1.onrender.com/users/deleteuser/${id}`)
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {
