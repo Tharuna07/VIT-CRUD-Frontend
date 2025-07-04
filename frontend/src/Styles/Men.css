@@ -1,0 +1,12 @@
+#s6 {
+  height: 300px;
+  width: 300px;
+}
+.con1 {
+  padding-top: 50px;
+  height: 300px;
+  width: 1500px;
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+}

@@ -1,0 +1,22 @@
+.cart-item-image {
+  width: 50px; /* Adjust the width as needed */
+  height: 70px; /* Maintain aspect ratio */
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+.link {
+  text-align: center;
+  text-decoration: underline;
+}
+.link1 {
+  padding-left: 20px;
+  color: white;
+  height: 300px;
+  width: 1500px;
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+}
