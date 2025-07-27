@@ -32,7 +32,7 @@ const Women = () => {
       <div className="container1">
         <div>
           <li>
-            <a href="">
+            <a href="/Cart">
               <img src={women} id="c2" alt="women"></img>
             </a>
           </li>

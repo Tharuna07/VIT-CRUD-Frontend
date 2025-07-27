@@ -32,8 +32,8 @@ const Men = () => {
       <div className="container">
         <div>
           <li>
-            <a href="">
-              <img src={deal}></img>
+            <a href="/Cart">
+              <img src={deal} alt="go to cart"></img>
             </a>
           </li>
         </div>

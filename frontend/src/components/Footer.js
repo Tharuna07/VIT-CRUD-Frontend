@@ -4,7 +4,6 @@ import keep from "./keep.png";
 function Footer() {
   return (
     <div className="con">
-      <h1></h1>
       <h3 className="d1">Experience shoping on modile</h3>
       <h4 className="c5">Keep in Touch</h4>
       <div>
