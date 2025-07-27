@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const CartItem = require("../Model/ProductSchema");
+const CartItem = require("../Model/CartSchema");
 
 router.post("/cartItems", async (req, res) => {
   const { name, img, review, price } = req.body;
