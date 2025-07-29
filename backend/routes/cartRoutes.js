@@ -3,14 +3,15 @@ const router = express.Router();
 const CartItem = require("../Model/CartSchema");
 
 router.post("/cartItems", async (req, res) => {
+  console.log("📦 Incoming cart item data:", req.body);
   const { name, img, review, price } = req.body;
   try {
     const newItem = new CartItem({ name, img, review, price });
     await newItem.save();
     res.status(201).json({ message: "Item added to cart successfully!" });
   } catch (error) {
-    console.error("Error adding item to cart:", error);
-    res.status(500).json({ message: "Failed to add item to cart" });
+    console.error("Error adding item to cart:", error.message);
+    res.status(500).json({ message: error.message });
   }
 });
 
