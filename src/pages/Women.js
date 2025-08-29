@@ -7,7 +7,13 @@ import "../Styles/Women.css";
 const Women = () => {
   const handleSubmit = (event, product) => {
     event.preventDefault();
-    const userId = localStorage.getItem("userId") || "guest";
+    const storedUserId = localStorage.getItem("userId");
+    if (!storedUserId) {
+      alert("Please login first to add items to your cart.");
+      window.location.href = "/login";
+      return;
+    }
+    const userId = storedUserId;
     const { name, img, review, price } = product;
     const inputObj1 = { userId, name, img, review, price };
     const url = "https://vit-crud-backendd-1.onrender.com/products/cartItems";
