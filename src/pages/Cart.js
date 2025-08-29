@@ -10,15 +10,20 @@ const Cart = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchCartItems();
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      alert("Please login to view your cart.");
+      window.location.href = "/login";
+      return;
+    }
+    fetchCartItems(userId);
   }, []);
 
-  const fetchCartItems = async () => {
+  const fetchCartItems = async (userId) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const userId = localStorage.getItem("userId") || "guest";
       const response = await axios.get(
         `https://vit-crud-backendd-1.onrender.com/products/cartItems?userId=${encodeURIComponent(
           userId
@@ -34,7 +39,12 @@ const Cart = () => {
   };
 
   const handleDelete = async (itemId) => {
-    const userId = localStorage.getItem("userId") || "guest";
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      alert("Please login to modify your cart.");
+      window.location.href = "/login";
+      return;
+    }
     axios
       .delete(
         `https://vit-crud-backendd-1.onrender.com/products/cartItems/${itemId}?userId=${encodeURIComponent(
@@ -44,8 +54,8 @@ const Cart = () => {
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {
-          alert("item deleted successfully");
-          fetchCartItems();
+          alert("Item deleted successfully");
+          fetchCartItems(userId);
         } else {
           Promise.reject();
         }
