@@ -7,8 +7,9 @@ import "../Styles/Men.css";
 const Men = () => {
   const handleSubmit = (event, product) => {
     event.preventDefault();
+    const userId = localStorage.getItem("userId") || "guest";
     const { name, img, review, price } = product;
-    const inputObj1 = { name, img, review, price };
+    const inputObj1 = { userId, name, img, review, price };
     const url = "https://vit-crud-backendd-1.onrender.com/products/cartItems";
 
     axios
